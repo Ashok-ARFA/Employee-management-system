@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Employee Management Table</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Employee Management Table</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active" >
+        <a class="nav-link" href="#">Add Emp</a>
+      </li>
+    </ul> 
+  </div>
+</nav>
+
+
+
+
+
+ <div class="container">
+      <div class="row">
+         <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                
+                    <h4 class="text-center text-primary">Edit employee</h4>
+                    
+                    <form th:action="@{/update}" method="post" th:object="${emp}">
+                    <input type= "hidden" th:value="${emp.id}" name="id"> 
+                    
+                    <div class="form-group">
+                        <label>Enter Full Name</label><br> <input type="text"
+                            class="form-controle" name=name th:value="${emp.name}">
+                    </div>
+                    
+                     <div class="form-group">
+                    <label>Enter Address</label><br> <input type="text" 
+                    class="form-controle" name=address th:value="${emp.address}">
+                    </div>
+                    
+                     <div class="form-group">
+                    <label>Enter Email</label><br>
+                    <input type="text" class="form-controle" name=email th:value="${emp.email}">
+                    </div>
+                    
+                     <div class="form-group">
+                    <label>Enter Ph Number</label><br>
+                    <input type="number" class="form-controle" name=phno th:value="${emp.phno}">
+                    </div>
+                    
+                     <div class="form-group">
+                    <label>Salary</label><br> <input type="number"
+                     class="form-controle" name=salary th:value="${emp.salary}">
+                    </div>
+                    
+                    <button class="btn btn-success btn-block">Submit</button>
+                    
+                    
+                    </form>
+                </div>
+            </div>
+         </div>
+      </div>
+  </div>
+</body>
+</html>
